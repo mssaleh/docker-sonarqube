@@ -89,6 +89,8 @@ RUN chmod a+x ${SONARQUBE_HOME}/bin/* \
     && chmod a+x /flutter/bin/* \
     && chmod a+x /sonar-scanner/bin/*
 
+ENV PATH "$PATH:/sonar-scanner/bin:/flutter/bin:/usr/lib/dart/bin"
+
 WORKDIR ${SONARQUBE_HOME}
 EXPOSE 9000
 

@@ -27,7 +27,8 @@ if [[ "$1" = '/opt/sonarqube/bin/sonar.sh' ]]; then
     if [[ "$(id -u)" = '0' ]]; then
         chown -R sonarqube:sonarqube "${SQ_DATA_DIR}" "${SQ_EXTENSIONS_DIR}" "${SQ_LOGS_DIR}" "${SQ_TEMP_DIR}"
         echo "Dropping Privileges"
-        exec su-exec sonarqube "$0" "$@"
+        exec gosu sonarqube "$0" "$@"
+        
     fi
 
     #

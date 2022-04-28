@@ -28,7 +28,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get full-upgrade -y \
         /var/lib/apt/lists/* \
     && export PATH="$PATH:/usr/lib/dart/bin"
 
-ARG FLUTTER_VERSION=2.10.3
+ARG FLUTTER_VERSION=2.10.5
 RUN curl -L -o /flutter_linux_${FLUTTER_VERSION}-stable.tar.xz https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}-stable.tar.xz \
     && cd / \
     && tar xf flutter_linux_${FLUTTER_VERSION}-stable.tar.xz \
@@ -47,7 +47,7 @@ RUN curl -L -o /sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip https://binaries.
 #
 # SonarQube setup
 #
-ARG SONARQUBE_VERSION=9.3.0.51899
+ARG SONARQUBE_VERSION=9.4.0.54424
 ARG SONARQUBE_ZIP_URL=https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-${SONARQUBE_VERSION}.zip
 ENV SONARQUBE_HOME=/opt/sonarqube \
     SONAR_VERSION="${SONARQUBE_VERSION}" \

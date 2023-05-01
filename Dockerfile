@@ -97,12 +97,7 @@ RUN set -eux; \
 
 COPY --chown=sonarqube:sonarqube entrypoint.sh ${SONARQUBE_HOME}/docker/
 
-RUN chmod a+x ${SONARQUBE_HOME}/bin/* \
-    && chmod a+x ${SONARQUBE_HOME}/docker/* \
-    && chmod a+x /flutter/bin/* \
-    && chmod a+x /sonar-scanner/bin/*
-
-RUN chmod a+x ${SONARQUBE_HOME}/bin/* \
+RUN chmod a+x ${SONARQUBE_HOME}/docker/* \
     && chmod a+x /flutter/bin/* \
     && chmod a+x /sonar-scanner/bin/*
 

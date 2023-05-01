@@ -25,7 +25,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get full-upgrade -y \
     && curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
     && curl https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list \
     && apt-get update \
-    && apt-get -y -t stable install dart=${DART_VERSION} \
+    && apt-get -y install dart \
     && apt-get autoremove -y --purge && apt-get autoclean -y && apt-get clean \
     && rm -rf \
         /tmp/* \
